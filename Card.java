@@ -20,4 +20,5 @@ public class Card {
         Card card=(Card) obj;
         return  rank==card.rank && suit.equals(card.suit);
     }
+
 }
