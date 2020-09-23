@@ -121,32 +121,54 @@ public class LinkList implements List {
 
     @Override
     public int size() {
-        return 0;
+
+        return size;
     }
 
     @Override
     public void clear() {
-
+        head=null;
+        last=null;
+        size=0;
     }
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return size==0;
     }
 
     @Override
     public boolean contains(Integer e) {
+         Node cur=this.head;
+         while(cur!=null){
+             if(cur.element==e){
+                 return true;
+             }
+             cur=cur.next;
+         }
         return false;
     }
 
     @Override
     public int indexOf(Integer e) {
-        return 0;
+        int count=0;
+        for(Node cur=this.head;cur!=null;cur=cur.next,count++){
+            if(cur.element==e){
+                return count;
+            }
+        }
+        return -1;
     }
 
     @Override
     public int lastIndexOf(Integer e) {
-        return 0;
+        int i=size-1;
+        for(Node cur=this.last;cur!=null;cur=cur.prev,i--){
+            if(cur.element==e){
+                return i;
+            }
+        }
+        return -1;
     }
 
     public boolean add(Integer e){
