@@ -13,9 +13,9 @@ public class widthTraver {
         while(!queue.isEmpty()){
             TreeNode node=queue.remove();
             System.out.print(node.value);
-            if(root.left!=null){
+            if(node.left!=null){
                 queue.add(node.left);
-            }if(root.right!=null){
+            }if(node.right!=null){
                 queue.add(node.right);
             }
         }
@@ -24,10 +24,11 @@ public class widthTraver {
         Queue<TreeNode> que = new LinkedList<>();
         que.add(root);
         while (true) {
-            if (root == null) {
+            TreeNode node=que.remove();
+            if (node == null) {
                 break;
             }
-            TreeNode node=que.remove();
+
             que.add(node.left);
             que.add(node.right);
         }
@@ -36,7 +37,7 @@ public class widthTraver {
             if(node!=null){
                 return false;
             }
-
+            
         }
         return true;
     }
