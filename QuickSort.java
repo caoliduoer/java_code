@@ -20,15 +20,15 @@ public class QuickSort {
         int tailIndex=highIndex;
         int key=arr[lowIndex];
         while(headIndex<tailIndex){
-            if(arr[tailIndex]>key&&headIndex<tailIndex){
+            if(arr[tailIndex]>key){
                 tailIndex--;
-            }else if(arr[tailIndex]<=key&&headIndex<tailIndex){
-                if(arr[headIndex]>key&&headIndex<tailIndex){
+            }else if(arr[tailIndex]<=key){
+                if(arr[headIndex]>key){
                     swap(arr,headIndex,tailIndex);
                     headIndex++;
                     tailIndex--;
                 }
-                else if(arr[headIndex]<=key&&headIndex<tailIndex){
+                else if(arr[headIndex]<=key){
                     headIndex++;
                 }
             }
